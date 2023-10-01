@@ -7,10 +7,3 @@
 .terraform
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
-
-**/.idea
-**/*.iml
-
-# Go mod and sum files 
-go.mod
-go.sum
