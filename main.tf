@@ -7,27 +7,19 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "your-resource-group-name"
-  location = "East US"
+data "azurerm_resource_group" "existing" {
+  name = "experiment32"  
 }
 
 resource "azurerm_api_management" "example" {
-  name                = "your-apim-name"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  publisher_name      = "Your Publisher Name"
-  publisher_email     = "your.email@example.com"
-
-  sku_name = "Developer_1"
+  name                = "my-api-management"
+  location            = data.azurerm_resource_group.existing.location
+  resource_group_name = "experiment32"
+  publisher_name      = "My Company"
+  publisher_email     = "contact@company.com"
+  sku_name            = "Developer_1"
 
   identity {
     type = "SystemAssigned"
   }
 }
-
-
-
-
-
-
