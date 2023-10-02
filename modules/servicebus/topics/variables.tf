@@ -17,13 +17,13 @@ variable "namespace_name" {
 }
 
 variable "topic_name" {
-  description = "Name of the Azure Service Bus queue"
+  description = "Name of the Azure Service Bus topic"
   type        = string
   default     = "harish-topic"
 }
 
 variable "topic_max_size" {
-  description = "Maximum size of the Service Bus queue in megabytes"
+  description = "Maximum size of the Service Bus topic in megabytes"
   type        = number
   default     = 1024
 }
